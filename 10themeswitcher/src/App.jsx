@@ -17,13 +17,15 @@ function App() {
   }
 
   // actual change in theme
-
+  
+  const clist = document.querySelector('html').classList
   useEffect(() => {
-      document.querySelector('html').classList.remove("light", "dark")
+      // document.querySelector('html').classList.remove("light", "dark")
+      // document.querySelector('html').classList.add(themeMode);
 
-      document.querySelector('html').classList.add(themeMode);
-
-  }, [themeMode])
+      clist.remove("light", "dark")
+      clist.add(themeMode)
+  }, [clist, themeMode])
 
   return (    
     <ThemeProvider value={{themeMode, lightMode, darkMode}}>
